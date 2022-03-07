@@ -5,7 +5,7 @@
         <thead class="table-head">
           <tr class="table-header">
             <th class="check">檢視</th>
-            <th class="id">#</th>
+            <th class="frequency">#</th>
             <th class="time">時間</th>
             <th class="speed">時速</th>
             <th class="state">狀態</th>
@@ -18,7 +18,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -29,7 +29,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -40,7 +40,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -51,7 +51,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -62,7 +62,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -73,7 +73,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -84,7 +84,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -95,7 +95,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -106,18 +106,7 @@
             <td class="check">
               <input type="checkbox" name="" id="" />
             </td>
-            <td class="id">1</td>
-            <td class="time">2022-01-31 08:30:32</td>
-            <td class="speed">15</td>
-            <td class="state">行駛中</td>
-            <td class="location">新北市泰山區 貴鳳街</td>
-            <td class="kilometer">3553.1</td>
-          </tr>
-          <tr class="table-content">
-            <td class="check">
-              <input type="checkbox" name="" id="" />
-            </td>
-            <td class="id">1</td>
+            <td class="frequency">2</td>
             <td class="time">2022-01-31 08:30:32</td>
             <td class="speed">15</td>
             <td class="state">行駛中</td>
@@ -129,6 +118,23 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    initialDrivers: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      driver: this.initialDrivers,
+    };
+  },
+};
+</script>
 
 <style scoped>
 .container {
@@ -179,7 +185,7 @@
 }
 
 .check,
-.id {
+.frequency {
   min-width: 8%;
   text-align: center;
   border-right: 1px solid;
@@ -223,7 +229,7 @@
 }
 
 tbody td.check,
-tbody td.id,
+tbody td.frequency,
 tbody td.time,
 tbody td.speed,
 tbody td.kilometer {
@@ -235,4 +241,5 @@ tbody td.state {
   font-weight: bold;
   border-right-color: #000;
 }
+
 </style>

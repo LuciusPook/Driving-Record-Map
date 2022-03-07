@@ -8,6 +8,11 @@
             <label for="" class="number">車號：</label>
             <select name="" id="">
               <option value="" disabled selected>請選擇車號</option>
+              <option value="">S336</option>
+              <option value="">S336</option>
+              <option value="">S336</option>
+              <option value="">S336</option>
+              <option value="">S336</option>
             </select>
           </div>
           <div class="start-time">
@@ -52,6 +57,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  prop: {
+    InitialDrivers: {
+      type: Object,
+      require: true,
+    },
+  },
+
+  data() {
+    return {
+      driver: this.InitialDrivers,
+    };
+  },
+};
+</script>
+
 
 <style scoped>
 .sidebar {
